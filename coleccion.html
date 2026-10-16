@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colección — OZEN</title>
+  <meta name="description" content="Colección OZEN Sportswear: oversize, camisetas y accesorios.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@400;500;600&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="collection">
+  <script src="products.js"></script>
+  <script src="layout.js"></script>
+
+  <main id="main" class="container page">
+    <nav class="crumbs" aria-label="Ruta">
+      <a href="index.html">Inicio</a><span>/</span><a href="coleccion.html">Colecciones</a><span>/</span><span id="crumbCurrent">Ver todo</span>
+    </nav>
+    <h1 class="page-title" id="colTitle">Ver todo</h1>
+
+    <div class="toolbar">
+      <div class="view-toggle" role="group" aria-label="Vista">
+        <button class="view-btn" data-view="grid" aria-label="Vista en cuadrícula">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>
+        </button>
+        <button class="view-btn" data-view="large" aria-label="Vista grande">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16"/></svg>
+        </button>
+      </div>
+      <span class="toolbar__count" id="colCount"></span>
+      <button class="filter-btn" id="openFilters">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h10M17 7h4M3 17h4M11 17h10"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>
+        Filtrar &amp; ordenar <span id="filterCount"></span>
+      </button>
+    </div>
+
+    <div class="grid" id="colGrid"></div>
+  </main>
+
+  <!-- Panel de filtros -->
+  <aside class="filters" id="filters" aria-label="Filtrar y ordenar">
+    <div class="drawer__head">
+      <h3>Filtrar &amp; ordenar</h3>
+      <button class="icon-btn" id="closeFilters" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 5l14 14M19 5 5 19"/></svg>
+      </button>
+    </div>
+    <div class="filters__body" id="filterBody"></div>
+    <div class="filters__foot">
+      <button class="btn btn--line" id="clearFilters">Limpiar</button>
+      <button class="btn btn--dark" id="applyFilters">Ver productos</button>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>

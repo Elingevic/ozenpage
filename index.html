@@ -6,47 +6,20 @@
   <title>OZEN — Sportswear</title>
   <meta name="description" content="OZEN Sportswear. Ropa de entrenamiento con carácter. Pide por WhatsApp.">
   <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="OZEN — Sportswear">
+  <meta property="og:description" content="Ropa de entrenamiento con carácter.">
+  <meta property="og:image" content="assets/logo-ozen.png">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@400;500;600&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="home">
+  <script src="products.js"></script>
+  <script src="layout.js"></script>
 
-  <!-- Header -->
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="#inicio" class="brand" aria-label="OZEN inicio">
-        <img src="assets/isotipo-navy.png" alt="" class="brand__iso">
-        <img src="assets/wordmark-navy.png" alt="OZEN" class="brand__word">
-      </a>
-      <nav class="nav" id="nav">
-        <a href="#nuevo">New in</a>
-        <a href="#essentials" data-goto="oversize">Oversize</a>
-        <a href="#essentials" data-goto="camisetas">Camisetas</a>
-        <a href="#essentials" data-goto="accesorios">Accesorios</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-      <div class="header__actions">
-        <a href="https://www.instagram.com/ozenod" target="_blank" rel="noopener" class="icon-btn" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
-        </a>
-        <button class="icon-btn cart-btn" id="cartOpen" aria-label="Abrir carrito">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2.5l2.2 11h10.6L20.5 7H6.4"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>
-          <span class="cart-count" id="cartCount">0</span>
-        </button>
-        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menú"><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Franja animada -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker__track" id="ticker"></div>
-  </div>
-
-  <main>
+  <main id="main">
     <!-- Hero slider -->
     <section class="hero" id="inicio">
       <div class="slides" id="slides">
@@ -56,7 +29,7 @@
             <span class="solid">Entrena con</span>
             <span class="outline">carácter</span>
           </div>
-          <a href="#essentials" class="pill slide__cta">Ver colección</a>
+          <a href="coleccion.html" class="pill slide__cta">Ver colección</a>
         </article>
         <article class="slide slide--b">
           <img src="assets/isotipo.png" alt="" class="slide__mark">
@@ -64,7 +37,7 @@
             <span class="outline">Drop 01</span>
             <span class="solid">700KG</span>
           </div>
-          <button class="pill slide__cta" data-add="700kg-oversize">Comprar ahora</button>
+          <a href="producto.html?id=700kg-oversize" class="pill slide__cta">Comprar ahora</a>
         </article>
         <article class="slide slide--c">
           <img src="assets/isotipo.png" alt="" class="slide__mark">
@@ -72,7 +45,7 @@
             <span class="solid">Únete a</span>
             <span class="outline">la manada</span>
           </div>
-          <a href="#contacto" class="pill slide__cta">Únete al club</a>
+          <a href="coleccion.html?cat=nuevo" class="pill slide__cta">Ver lo nuevo</a>
         </article>
       </div>
       <img src="assets/logo-ozen.png" alt="" class="hero__logo">
@@ -81,13 +54,13 @@
     </section>
 
     <!-- Banners de categoría -->
-    <section class="container banners" id="nuevo">
-      <a href="#essentials" class="banner" data-goto="oversize">
+    <section class="container banners">
+      <a href="coleccion.html?cat=oversize" class="banner">
         <img src="assets/isotipo.png" alt="" class="banner__mark">
         <div class="banner__text"><span class="outline">Oversize</span><span class="solid">Shop</span></div>
         <img src="assets/wordmark.png" alt="" class="banner__logo">
       </a>
-      <a href="#essentials" class="banner banner--alt" data-goto="camisetas">
+      <a href="coleccion.html?cat=camisetas" class="banner banner--alt">
         <img src="assets/isotipo.png" alt="" class="banner__mark">
         <div class="banner__text"><span class="outline">Training</span><span class="solid">Shop</span></div>
         <img src="assets/wordmark.png" alt="" class="banner__logo">
@@ -95,7 +68,7 @@
     </section>
 
     <!-- Essentials con pestañas -->
-    <section class="container block" id="essentials">
+    <section class="container block">
       <h2 class="block__title">OZEN Essentials</h2>
       <p class="block__sub">Drop 01</p>
       <div class="block__bar">
@@ -104,7 +77,7 @@
           <button class="tab" data-cat="camisetas">Camisetas</button>
           <button class="tab" data-cat="accesorios">Accesorios</button>
         </div>
-        <a href="#todo" class="link">Ver colección</a>
+        <a href="coleccion.html" class="link" id="essMore">Ver colección</a>
       </div>
       <div class="row" id="essRow"></div>
     </section>
@@ -113,15 +86,15 @@
     <section class="container block block--line">
       <h2 class="block__title">Sé OZEN</h2>
       <p class="block__sub">Categorías</p>
-      <a href="#todo" class="link">Ver colección</a>
+      <a href="coleccion.html" class="link">Ver todo</a>
       <div class="tiles">
-        <a href="#essentials" class="tile" data-goto="oversize">
+        <a href="coleccion.html?cat=oversize" class="tile">
           <span class="tile__big outline">Oversize</span><span class="pill pill--sm">Oversize</span>
         </a>
-        <a href="#essentials" class="tile tile--2" data-goto="camisetas">
+        <a href="coleccion.html?cat=camisetas" class="tile tile--2">
           <span class="tile__big outline">Camisetas</span><span class="pill pill--sm">Camisetas</span>
         </a>
-        <a href="#essentials" class="tile tile--3 tile--center" data-goto="accesorios">
+        <a href="coleccion.html?cat=accesorios" class="tile tile--3 tile--center">
           <span class="tile__big outline">Accesorios</span><span class="pill pill--sm">Accesorios</span>
         </a>
       </div>
@@ -160,21 +133,22 @@
       </div>
     </section>
 
-    <!-- Lo más vendido / todo -->
-    <section class="container block" id="todo">
+    <!-- Lo más vendido / New in -->
+    <section class="container block">
       <h2 class="block__title">Lo más vendido</h2>
       <p class="block__sub">Nuestros favoritos</p>
       <div class="block__bar">
-        <div class="tabs tabs--lg" id="allTabs">
+        <div class="tabs tabs--lg" id="topTabs">
           <button class="tab is-active" data-cat="top">Favoritos</button>
-          <button class="tab" data-cat="all">Todo</button>
+          <button class="tab" data-cat="nuevo">New in</button>
         </div>
+        <a href="coleccion.html?cat=top" class="link" id="topMore">Ver colección</a>
       </div>
-      <div class="grid" id="allGrid"></div>
+      <div class="grid" id="topGrid"></div>
     </section>
 
     <!-- Clientes -->
-    <section class="container block block--line" id="clientes">
+    <section class="container block block--line">
       <h2 class="block__title">Clientes OZEN</h2>
       <p class="block__sub">La comunidad en <a href="https://www.instagram.com/ozenod" target="_blank" rel="noopener" class="link">@ozenod</a></p>
       <div class="reviews">
@@ -183,82 +157,7 @@
         <blockquote class="review"><p>“La 700KG es la que más me preguntan en el gym.”</p><footer>Cliente OZEN</footer></blockquote>
       </div>
     </section>
-
-    <!-- Club -->
-    <section class="container club" id="contacto">
-      <div>
-        <h2>Únete al club OZEN</h2>
-        <p>Entérate primero de los nuevos drops y ofertas exclusivas.</p>
-      </div>
-      <div class="club__actions">
-        <a href="#" class="btn btn--dark js-wa" data-msg="Hola OZEN, quiero unirme al club para enterarme de los nuevos drops.">Unirme por WhatsApp</a>
-        <a href="https://www.instagram.com/ozenod" target="_blank" rel="noopener" class="btn btn--line">Seguir en Instagram</a>
-      </div>
-    </section>
   </main>
-
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div>
-        <h4>Shop</h4>
-        <a href="#nuevo">New in</a>
-        <a href="#essentials" data-goto="oversize">Oversize</a>
-        <a href="#essentials" data-goto="camisetas">Camisetas</a>
-        <a href="#essentials" data-goto="accesorios">Accesorios</a>
-      </div>
-      <div>
-        <h4>Atención al cliente</h4>
-        <a href="#" class="js-wa">WhatsApp</a>
-        <a href="#" class="js-wa" data-msg="Hola OZEN, ¿me ayudan con la guía de tallas?">Guía de tallas</a>
-        <a href="#" class="js-wa" data-msg="Hola OZEN, quiero información sobre envíos.">Envíos</a>
-      </div>
-      <div>
-        <h4>Síguenos</h4>
-        <a href="https://www.instagram.com/ozenod" target="_blank" rel="noopener">Instagram</a>
-      </div>
-      <div class="footer__brand">
-        <img src="assets/logo-ozen.png" alt="OZEN">
-        <p class="footer__pay">Pago móvil · Zelle · Efectivo</p>
-      </div>
-    </div>
-    <div class="container footer__bottom">
-      <span>© <span id="year"></span> OZEN Sportswear</span>
-      <span>Hecho para entrenar</span>
-    </div>
-  </footer>
-
-  <!-- WhatsApp flotante -->
-  <a href="#" class="wa-float js-wa" aria-label="WhatsApp">
-    <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.7a10.7 10.7 0 0 1-5.5-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7Zm5.9-8c-.3-.2-1.9-1-2.2-1s-.5-.2-.7.2l-1 1.2c-.2.2-.4.3-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.5 6.5 0 0 0 1.3 3.4 14.8 14.8 0 0 0 5.7 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.4Z"/></svg>
-  </a>
-
-  <!-- Carrito -->
-  <div class="overlay" id="overlay"></div>
-  <aside class="drawer" id="drawer" aria-label="Carrito">
-    <div class="drawer__head">
-      <h3>Carrito <span id="cartHeadCount"></span></h3>
-      <button class="icon-btn" id="cartClose" aria-label="Cerrar">✕</button>
-    </div>
-    <div class="drawer__body" id="cartItems"></div>
-    <div class="drawer__foot">
-      <div class="drawer__total"><span>Total</span><strong id="cartTotal">$0.00 USD</strong></div>
-      <button class="btn btn--dark btn--block" id="checkout">Enviar pedido por WhatsApp</button>
-      <p class="drawer__note">Envío y forma de pago se coordinan por WhatsApp.</p>
-    </div>
-  </aside>
-
-  <!-- Modal de talla -->
-  <div class="modal" id="sizeModal" role="dialog" aria-modal="true">
-    <div class="modal__card">
-      <button class="icon-btn modal__close" id="sizeClose" aria-label="Cerrar">✕</button>
-      <p class="block__sub">Elige tu talla</p>
-      <h3 id="sizeTitle"></h3>
-      <div class="sizes" id="sizeOptions"></div>
-      <button class="btn btn--dark btn--block" id="sizeConfirm" disabled>Agregar al carrito</button>
-    </div>
-  </div>
-
-  <div class="toast" id="toast"></div>
 
   <script src="app.js"></script>
 </body>
